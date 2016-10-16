@@ -12,7 +12,7 @@ before_action :set_article, only: [:edit, :show, :update, :destroy]
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    flash[:notice] = "Article was successfully destryed"
+    flash[:danger] = "Article was successfully destryed"
     redirect_to articles_path
   end
   
@@ -23,7 +23,7 @@ before_action :set_article, only: [:edit, :show, :update, :destroy]
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Article was successfully created"
+      flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
     else
       render 'new'
@@ -38,7 +38,7 @@ before_action :set_article, only: [:edit, :show, :update, :destroy]
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      flash[:notice] = "Article successfully updated"
+      flash[:success] = "Article successfully updated"
       redirect_to article_path(@article)
     else
       render 'edit'
