@@ -1,6 +1,18 @@
-<div class="center jumbotron" >
-  <div class="container"> 
-    <h1>Alpha Blog</h1>
+<div class="center jumbotron">
+  <video id="bg-video" autoplay loop preload muted>
+    <source src="/Costa_Rica.mp4" type="video/mp4" />
+  </video>
+  <div class="center jumbovidtext">
+    <h1 class="txtjumbo">Alpha blog</h1>
     <%= link_to "Sign up now", "#", class: "btn btn-primary btn-lg" %>
   </div>
 </div>
+
+<div class="container">
+  <div class="raw">
+    <div class="col-xs-12">
+      One more thing we should do is hide the video on mobile and just show the background image. This is because most mobile platforms won’t autoplay HTML5 video and will display it with an embedded play button on top of our content. In this example we will use the same image that is used for poster attribute in the video. Keep in mind that using display: none on the video element won’t prevent it from downloading.
+    </div>
+  </div>
+</div>
+
