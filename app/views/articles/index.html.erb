@@ -10,8 +10,13 @@
           </div>
           <div class="article-body">
             <%= truncate(cadaarticle.description, lenght: 100) %>
-            <small>Created by: <% cadaarticle.user.username %>, 
+            <div class="article-meta-details">
+                  <small>Created by: <%= cadaarticle.user.username if cadaarticle.user %>, 
+                  <%= time_ago_in_words(cadaarticle.created_at) %> ago,
+                  last updated: <%= time_ago_in_words(cadaarticle.updated_at) %> ago
             </small>
+
+            </div>
           </div>
           <div class="article-actions">
             <%= link_to "Edit", edit_article_path(cadaarticle), 
