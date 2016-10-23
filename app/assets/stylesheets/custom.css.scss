@@ -20,14 +20,15 @@ $navbar-default-bg: #efefef;
 }
 
 .jumbotron {
-  background: rgba(128,128,128,0.5);
-  margin: 25vh 0;
+  background-image: url(/images/Marta.jpg);
+  background-size: cover;
+  height: 600px;
+  width: 100%;
   overflow-y: hidden;
 }
 
 .jumbotron h1 {
   color: #ffffff;
-  text-align: center;
 }
 
 .article-actions {
