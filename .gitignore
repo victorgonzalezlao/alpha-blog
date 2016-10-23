@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore media
-/public/*
+*.mp4
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
