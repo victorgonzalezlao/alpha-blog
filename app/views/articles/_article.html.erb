@@ -1,0 +1,27 @@
+  <% obj.each do |cadaarticle| %> <!--for each article it will create a row-->
+    <div class="row"> <!--Creates a row-->
+      <div class="col-xs-8 col-xs-offset-2"> <!--chooses the column in the row-->
+        <div class="well well-lg"> <!--formats the row as a well-->
+          <div class="article-title"> <!--creates a new class to edit the format in css.scss file-->
+            <%= link_to cadaarticle.title, article_path(cadaarticle) %>
+          </div>
+          <div class="article-body">
+            <%= truncate(cadaarticle.description, lenght: 100) %>
+            <div class="article-meta-details">
+                  <small>Created by: <%= cadaarticle.user.username if cadaarticle.user %>, 
+                  <%= time_ago_in_words(cadaarticle.created_at) %> ago,
+                  last updated: <%= time_ago_in_words(cadaarticle.updated_at) %> ago
+            </small>
+
+            </div>
+          </div>
+          <div class="article-actions">
+            <%= link_to "Edit", edit_article_path(cadaarticle), 
+                                class: "btn btn-xs btn-primary" %>
+            <%= link_to "Delete", article_path(cadaarticle), 
+                                method: :delete, data: {confirm: "Are you sure you want to delete the article?"}, class: "btn btn-xs btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
