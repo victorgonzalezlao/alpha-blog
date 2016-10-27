@@ -1,10 +1,15 @@
 class ArticlesController < ApplicationController
 
 before_action :set_article, only: [:edit, :show, :update, :destroy]
+  
   def index
-    @articles = Article.all
+    @articles = Article.paginate(:page => params[:page], :per_page => 3)
   end
-
+  
+  def new
+    @article = Article.new
+  end
+  
   def show
     @article = Article.find(params[:id])
   end 
@@ -25,10 +30,6 @@ before_action :set_article, only: [:edit, :show, :update, :destroy]
     @article.destroy
     flash[:danger] = "Article was successfully destryed"
     redirect_to articles_path
-  end
-  
-  def new
-    @article = Article.new
   end
 
   def edit

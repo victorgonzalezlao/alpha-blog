@@ -1,6 +1,10 @@
 <div class="container">
   <h1 align="center">List of articles</h1>
-
+  <div align="center">
+    <%= will_paginate renderer: BootstrapPagination::Rails %>
+  </div>
   <%= render 'article', obj: @articles %>
-
+  <div align="center">
+    <%= will_paginate renderer: BootstrapPagination::Rails %>
+  </div>
 </div>

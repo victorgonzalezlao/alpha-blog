@@ -14,6 +14,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+# Pagination: will_paginate creates the pagination, will_paginate-bootstrap styles like twitter
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
